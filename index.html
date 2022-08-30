@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Details</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="left-container">
+
+        <h1>Stock Profit and Loss</h1>
+
+        <main>
+            <label>
+                Enter Initial Value:
+                <input class="input-value initial-price" placeholder="Initial value.." type="number" min="0" autofocus>
+            </label>
+            <label>
+                Units owned:
+                <input class="input-value units" placeholder="Present units.." type="number" min="0">
+            </label>
+            <label>
+                Current Price:
+                <input class="input-value current-price" placeholder="Current value..." type="number" min="0">
+            </label>
+
+            <button class="btn-tell">Calculate</button>
+        </main>
+    </div>
+
+    <div class="right-container">
+        <h3 class="result"></h3>
+        <div class="img-container">
+            <img class="img-profit" src="./images/money-flying.gif" alt="a person shooting money out of a gun">
+        </div>
+        <div class="img-container">
+            <img class="img-balance" src="./images/balanced.gif" alt="A small knife perfectly balanced on a finger">
+        </div>
+        <div class="img-container">
+            <img class="img-loss" src="./images/sweats.gif" alt="A person sweating">
+        </div>
+    </div>
+    <footer class="footer">
+        <a class="link-footer" href="https://github.com/jagrut-sharma" target="_blank">
+            <img class="img-footer" src="./images/GitHub-Mark-64px.png" alt="github logo">
+        </a>
+        <a class="link-footer" href="https://twitter.com/Jagrut_Sharma" target="_blank">
+            <img class="img-footer" src="./images/Twitter social icons - circle - blue.png" alt="twitter logo">
+        </a>
+        <a class="link-footer" href="https://www.linkedin.com/in/jagrut-sharma/" target="_blank">
+            <img class="img-footer" src="./images/LI-In-Bug.png" alt="linked in logo">
+        </a>
+    </footer>
+</body>
+
+<script src="./app.js" type="text/javascript"></script>
+</html>

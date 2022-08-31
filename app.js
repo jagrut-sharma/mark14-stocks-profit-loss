@@ -75,7 +75,7 @@ function adjustImagesDisplay(position) {
         lossImg.style.display = "none";
         noProfitNoLossImg.style.display = "inline";
         profitImg.style.display = "none";
-        outputResult.style.color = "black";
+        outputResult.style.color = "white";
     } else if(position === "profit") {
         lossImg.style.display = "none";
         noProfitNoLossImg.style.display = "none";

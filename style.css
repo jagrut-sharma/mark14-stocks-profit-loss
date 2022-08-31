@@ -15,7 +15,7 @@ body {
 }
 
 h1{
-    color: white;
+    color: #2563eb;
 }
 
 label {
@@ -29,11 +29,11 @@ label {
     width: 15rem;
     margin: 0.5rem auto 1rem;
     text-align: center;
-    border: 1px solid #7dd3fc;
+    border: 1px solid #1d4ed8;
 }
 
 .input-value:focus{
-    border: 5px solid #7dd3fc;
+    border: 5px solid #1d4ed8;
 }
 
 .input-value::placeholder {
@@ -46,6 +46,7 @@ label {
     font-size: 1rem;
     margin: 1rem;
     transition: 200ms;
+    cursor: pointer;
 }
 
 .btn-tell:hover{
@@ -82,11 +83,47 @@ label {
 
 .left-container{
     width: 100vw;
-    background-color: #000;
+    background-color: #171717;
 }
 
 .right-container{
     width: 100vw;
     height: 50%;
-    background-color: #171717;
+    background-color: #000;
+}
+
+@media screen and (min-width: 800px) {
+    body{
+        all: unset;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+    }
+
+    .right-container, .left-container{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer{
+        margin-top: 0;
+        width: 8rem;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .img-footer {
+        height: 32px;
+        width: 32px;
+        margin: 3rem 1rem;
+        transition: transform 200ms;
+    }
+
+    .img-footer:hover{
+        transform: scale(1.2);
+    }
 }

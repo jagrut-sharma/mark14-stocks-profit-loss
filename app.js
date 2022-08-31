@@ -6,8 +6,15 @@ const outputResult = document.querySelector(".result");
 const profitImg = document.querySelector(".img-profit");
 const noProfitNoLossImg = document.querySelector(".img-balance");
 const lossImg = document.querySelector(".img-loss");
+const headingColor = document.querySelector(".heading");
+const footerColor = document.querySelector(".footer");
 
 tellBtn.addEventListener("click", clickHandler);
+const defaultColor = "#2563eb";
+const footerDefaultColor = "#1d4ed8";
+const profitColor = "#16a34a";
+const lossColor = "#e11d48";
+
 
 function clickHandler() {
     const initialCost = Number(initialPrice.value);
@@ -19,13 +26,13 @@ function clickHandler() {
 
         if (result[0] === "profit") {
             showMessage(`Congratulations! you are in Profit. Your profit margin is ₹ ${result[3]} & Profit percentage is ${result[2]} %`);
-            adjustImagesDisplay("profit");
+            adjustImagesDisplay("profit", result[2]);
         } else if (result[0] === "No Profit or loss") {
             showMessage("Your portfolio is balanced");
             adjustImagesDisplay("balanced");
         } else {
             showMessage(`Sorry! you are in loss. Your loss amounts to ₹ ${result[3]} & loss percentage is ${result[2]} %`);
-            adjustImagesDisplay("loss");
+            adjustImagesDisplay("loss", result[2]);
         }
     } else {
         showMessage("Enter Valid Values");
@@ -65,26 +72,42 @@ function profitandLoss(initial, units, current) {
     }
 }
 
-function adjustImagesDisplay(position) {
+function adjustImagesDisplay(position, percentageValue) {
     if (position === "loss") {
         lossImg.style.display = "inline";
         noProfitNoLossImg.style.display = "none";
         profitImg.style.display = "none";
         outputResult.style.color = "red";
+        headingColor.style.color = defaultColor;
+        footerColor.style.backgroundColor = footerDefaultColor;
+        if(percentageValue > 50) {
+            headingColor.style.color = lossColor;
+            footerColor.style.backgroundColor = lossColor;
+        }
     } else if (position === "balanced") {
         lossImg.style.display = "none";
         noProfitNoLossImg.style.display = "inline";
         profitImg.style.display = "none";
         outputResult.style.color = "white";
+        headingColor.style.color = defaultColor;
+        footerColor.style.backgroundColor = footerDefaultColor;
     } else if(position === "profit") {
         lossImg.style.display = "none";
         noProfitNoLossImg.style.display = "none";
         profitImg.style.display = "inline";
         outputResult.style.color = "green";
+        headingColor.style.color = defaultColor;
+        footerColor.style.backgroundColor = footerDefaultColor;
+        if(percentageValue > 50) {
+            headingColor.style.color = profitColor;
+            footerColor.style.backgroundColor = profitColor;
+        }
     } else {
         lossImg.style.display = "none";
         noProfitNoLossImg.style.display = "none";
         profitImg.style.display = "none";
         outputResult.style.color = "red";
+        headingColor.style.color = defaultColor;
+        footerColor.style.backgroundColor = footerDefaultColor;
     }
 }
